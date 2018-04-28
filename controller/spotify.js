@@ -4,8 +4,8 @@ var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-var client_id = 'ac4572df30bd4b56bcfb569f7adcea63'; // Your client id
-var client_secret = 'cd6e19ece4074aeb8d50c2b69099676d'; // Your secret
+var client_id = ''; // Your client id
+var client_secret = ''; // Your secret
 var redirect_uri = 'http://localhost:8888/spotify/callback'; // Your redirect uri
 
 
