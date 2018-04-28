@@ -5,3 +5,4 @@ typings.json
 .vscode/
 resource.json
 .gitignore
+controller/spotify.js
