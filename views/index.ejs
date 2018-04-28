@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title><%= title %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel='stylesheet' href='/css/style.css' />
+        <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <div class="app" id="app">
+                <article class="content forms-page">
+                    <section class="section">
+                        <div class="row">
+
+
+                            <div class="col-lg-5 offset-lg-3 col-md-7 col-sm-12 col-12">
+                                <div id="spotify-card" class="card">
+                                    <div class="card-header p-0"> 
+                                        <div id="spotify-menu">
+
+                                            <nav class="nav nav-pills nav-justified small">
+                                                <a id="queue-btn" class="nav-item nav-link nowrap pointer active" role="button">
+                                                    <i class="fa fa-play"></i>&nbsp;&nbsp;Queue
+                                                </a>
+                                                <a id="playlist-btn" class="nav-item nav-link nowrap pointer" role="button">
+                                                    <i class="fa fa-list-ul"></i>&nbsp;&nbsp;Playlists
+                                                </a>
+                                                <a id="browse-btn" class="nav-item nav-link nowrap pointer" role="button">
+                                                    <i class="fa fa-headphones"></i>&nbsp;&nbsp;Browse
+                                                </a>
+                                                <a id="search-btn" class="nav-item nav-link nowrap pointer" role="button">
+                                                    <i class="fa fa-search"></i>&nbsp;&nbsp;Search
+                                                </a>
+
+                                            </nav>
+                                            
+                                            <img id="spotify-queue" class="card-img-top menu" src="http://placehold.it/430x430/e3e3e3/e3e3e3"  width="430" style="background-color: #DDDDDD;">
+
+                                            <div id="spotify-playlist" class="menu bg-white"></div>
+                                            <div id="spotify-browse" class="menu bg-white container-fluid"></div>
+                                            <div id="spotify-search" class="menu bg-white container-fluid"></div>
+
+                                        </div>
+
+
+
+                                        <div id="spotify-login" class="card-img-overlay">
+                                        <div style="position:relative; width:100%; text-align:center; top:200px;">
+                                            <a href="/spotify/login" class="btn btn-primary btn-lg"><span>Log in with Spotify</span>&nbsp;&nbsp;<i class="fa fa-spotify fa-2x" style="vertical-align: middle;"></i></a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="card-body color-inverse">
+                                        <input id="context-id" type="hidden" />
+                                        <input id="track-id" type="hidden" />
+
+                                        <div class="text-center mb-3">
+                                            <div id="track"></div>
+                                            <div id="artiste" class="small text-muted"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-around text-center mt-3 align-items-center">
+                                            <div><i id="shuffle" class="fa fa-random pointer"></i></div>
+                                            <div><i id="previous" class="fa fa-step-backward pointer fa-2x"></i></div>
+                                            <div>
+                                                <i id="play" class="fa fa-play-circle-o pointer fa-4x" ></i>
+                                            </div>
+                                            <div><i id="next" class="fa fa-step-forward pointer fa-2x"></i></div>
+                                            <div id="repeat-mode" class="pointer"><i class="fa fa-repeat"></i><span class="un" style="visibility: hidden">1</span></div>
+                                        </div>
+                                        <div class="d-inline-flex">
+                            
+                                        </div>
+                                        <div>
+                                            <div id="progress-bar-container" class="progress pointer" style="height: 5px;">
+                                                <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="d-flex justify-content-between mt-1">
+                                                <div id="progression" class="small text-muted" data-mili=""></div>
+                                                <div id="duree" class="small text-muted" data-mili=""></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer ">
+                                        <div class="d-flex justify-content-between small text-muted">
+                                            <div id="device" class="text-left">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-around text-center align-items-center">
+                                            <i id="mute" class="fa fa-volume-off pointer"></i>
+                                            <div id="volume-bar-container" class="progress pointer" style="height: 4px; width: 80%;">
+                                                <div id="volume" class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <i id="volume-max" class="fa fa-volume-up pointer"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </section>
+                </article>
+          </div>
+    </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/tether.min.js"></script>
+    <script src="/js/umd/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

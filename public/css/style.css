@@ -1,0 +1,46 @@
+.link:hover { text-decoration: underline; cursor: pointer;}
+#spotify-menu { width: 100%;}
+#spotify-menu .menu { height: 100%; overflow-y: scroll; }
+
+#spotify-menu .nav-pills { padding: 9px 4px;}
+#spotify-card .card-img-top { border-top-left-radius:0; border-top-right-radius:0}
+#spotify-card .track .start-playlist { color: #FFF;}
+.spotify-color, #spotify-card .on, #spotify-card .track:hover .start-playlist, #spotify-card .fa.pointer:hover {
+  color: #73D970;
+}
+#repeat-mode .un {
+  position: relative;
+  top: 6px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.color-inverse { color :#FFF; background: #4f5f6f;}
+.color-inverse .text-muted { color :#9ba8b5!important;}
+
+.button-remote {width: 50px} 
+
+.table td.small-td { width: 10px; padding: .75rem .2rem;}
+
+
+.top-button-remote, .bottom-button-remote, .middle-button-remote { border: 1px solid black;         -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  user-select: none;}
+.top-button-remote {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom: 0;
+}
+.bottom-button-remote {
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top: 0;
+}
+.middle-button-remote {border-bottom: 0;border-top: 0;}
+
+
+.border-bottom-round {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
