@@ -142,13 +142,11 @@
 		});
 	}
 
-
 	function loadArtist() {
 		$('.artist').click(function() {
 			getArtist($(this).data('id'));
 		});
 	}
-
 
 	function getPlaylist(page) {
 		var offset = (page-1) * 20;
@@ -341,7 +339,7 @@
 
 						data.shuffle_state === true ? $('#shuffle').addClass('on') : $('#shuffle').removeClass('on');
 
-						data.is_playing === false ? $('#play').removeClass('fa-pause-circle-o').addClass('fa-play-circle-o') : $('#play').removeClass('fa-play-circle-o').addClass('fa-pause-circle-o');
+						data.is_playing === false ? $('#play').removeClass('fa-pause-circle').addClass('fa-play-circle') : $('#play').removeClass('fa-play-circle').addClass('fa-pause-circle');
 
 						clearInterval(timerProgresseBar);
 						if(data.is_playing === true)
@@ -402,7 +400,7 @@
 
 		document.getElementById('play').addEventListener('click', function() {
 			getState()
-			$('#play').hasClass('fa-play-circle-o') ? endpoint = 'play' : endpoint = 'pause';
+			$('#play').hasClass('fa-play-circle') ? endpoint = 'play' : endpoint = 'pause';
 
 			$.ajax({
 				url: 'https://api.spotify.com/v1/me/player/'+endpoint,
