@@ -4,7 +4,6 @@ A Javascript client for spotify API
 
 You'll need to create an app on [https://developer.spotify.com](https://developer.spotify.com). And get a client id and client secret, to put on /controller/spotify.js.
 
-
 ```
 npm install
 
