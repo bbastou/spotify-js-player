@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const controllerSpotify = require('../controller/spotify');
 
 const router = express.Router();

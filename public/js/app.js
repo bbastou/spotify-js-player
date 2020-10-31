@@ -44,7 +44,7 @@
 	function setMenu(menu) {
 
 		$('#spotify-menu .nav-pills .nav-item').removeClass('active');
-		$('#spotify-menu .menu').hide();		
+		$('#spotify-menu .menu').hide();
 		$('#'+menu+'-btn').addClass('active');
 
 		var previousCss  = $("#spotify-queue").attr("style");
@@ -53,7 +53,7 @@
 				visibility: 'hidden',
 				display:    'block'
 			});
-		
+
 		optionHeight = $("#spotify-queue").height();
 
 		$("#spotify-queue").attr("style", previousCss ? previousCss : "");
@@ -88,14 +88,14 @@
 				var html_result = '<div id="artist-detail">';
 
 				html_result += '<h3 class="text-center text-muted mt-2">'+data.name+'</h3>';
-				
+
 				html_result += '<div class="text-center text-capitalize mt-2 mb-2">';
-				
+
 				data.genres.forEach(function(genre) {
 					html_result += '<span class="badge badge-pill badge-primary mr-1">'+genre+'</span>';
 				});
 				html_result += '</div>';
-				
+
 				html_result += '</div>';
 				$('#spotify-browse').html('').append(html_result);
 				setMenu('browse');
@@ -109,31 +109,31 @@
 		$.ajax({
 			url: 'https://api.spotify.com/v1/artists/'+id+'/top-tracks?country=FR',
 			type: 'GET',
-			headers: {'Authorization': 'Bearer ' + access_token},			
+			headers: {'Authorization': 'Bearer ' + access_token},
 			complete: function(data, xhr, textStatus) {
 				data = data.responseJSON;
 				console.log(data);
 				var html_result = '<div id="top-track">';
-				
+
 				html_result += '<h5 class="text-muted">Popular</h5>';
-				
+
 				html_result += '<table class="table table-hover small no-margin mt-2">';
-				
+
 				data.tracks.forEach(function(song, index) {
 					html_result += '<tr class="track" data-uri="'+song.uri+'">';
 
 					html_result += '<td class="text-muted small-td">'+parseInt(parseInt(index)+1)+'</td>';
-					
+
 					html_result += '<td class="small-td"><i class="fa fa-play pointer start-playlist" data-offset="'+index+'"></i></td>';
 					song.explicit ? explicit = '<span class="badge badge-light pull-right font-weight-normal">Explicit</span>' : explicit = '';
-					
+
 					html_result += '<td>'+song.name+explicit+'</td>';
-					
+
 					html_result += '</tr>';
 				});
 
 				html_result += '</table>';
-				
+
 				html_result += '</div>';
 				$('#spotify-browse').append(html_result);
 				//$('#spotify-browse').html('').append(html_result);
@@ -187,10 +187,10 @@
 
 					html_result += '<td><i class="fa fa-play pointer start-playlist" data-offset="'+index+'"></i></td>';
 					song.track.explicit ? explicit = '<span class="badge badge-light pull-right font-weight-normal">Explicit</span>' : explicit = '';
-					
+
 					html_result += '<td>'+song.track.name+explicit+'</td>';
 					html_result += '<td>'+song.track.artists.map(a => '<span class="artist link" data-id="'+a.id+'" data-uri="'+a.uri+'"  data-name="'+a.name+'">'+a.name+'</span>').join(', ')+'</td>';
-					
+
 					html_result += '</tr>';
 				});
 				html_result += '</tbody></table>'
@@ -215,7 +215,7 @@
 				console.log(data.status);
 				getState();
 			}
-		});    
+		});
 	}
 
 	function showRepeatMode(mode) {
@@ -332,7 +332,7 @@
 					if(data) {
 						$('#context-id').val(data.context.uri);
 						$('#track-id').val(data.item.uri);
-						
+
 						$('.card-img-top').attr('src', data.item.album.images[0].url);
 						$('#track').text(data.item.name);
 						$('#artiste').html(data.item.artists.map(a => '<span class="artist link" data-id="'+a.id+'" data-uri="'+a.uri+'" data-name="'+a.name+'">'+a.name+'</span>').join(', '));
@@ -410,7 +410,7 @@
 					console.log(data.status);
 					getState();
 				}
-			});          
+			});
 		}, false);
 
 		document.getElementById('next').addEventListener('click', function() {
@@ -480,11 +480,11 @@
 		}, false);
 
 		var timerRefreshToken;
-		
+
 		function setRefreshToken(){
 			return setInterval(refreshToken, 30000);;
 		}
-		
+
 		function refreshToken() {
 			$.ajax({
 				url: '/spotify/refresh_token',
